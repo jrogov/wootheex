@@ -12,6 +12,21 @@ defmodule Wootheex.UserAgent do
   @enforce_keys [:category, :browser_name, :browser_type, :browser_version, :os, :os_version, :vendor]
   defstruct @enforce_keys
 
+  @doc """
+  Parse user agent to a struct
+
+      iex> Wootheex.UserAgent.parse "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.155 Safari/537.36"
+      %Wootheex.UserAgent{
+        browser_name: "Chrome",
+        browser_type: :browser,
+        browser_version: "44.0.2403.155",
+        category: :pc,
+        os: "Mac OSX",
+        os_version: "10.10.4",
+        vendor: "Google"
+      }
+
+  """
   @spec parse(W.user_agent) :: parse_result_explicit
   def parse(ua) do
     info = W.parse(ua)
@@ -49,6 +64,12 @@ defmodule Wootheex do
                                   vendor}
 
 
+  @doc """
+  Parse user agent to simple tuple with info (see spec and parse_result type)
+
+      iex> Wootheex.parse "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.155 Safari/537.36"
+      {:pc, "Chrome", :browser, "44.0.2403.155", "Mac OSX", "10.10.4", "Google"}
+  """
   @spec parse(user_agent) :: parse_result
   def parse(_ua) do
     raise "Wootheex.NIF.parse/1 is not implemented"
