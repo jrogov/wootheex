@@ -25,5 +25,4 @@ woothex-*.tar
 ./native/wootheex_nif/target/
 /.elixir_ls
 /native/*/target
-/native/*/.cargo
 /priv/native/*
