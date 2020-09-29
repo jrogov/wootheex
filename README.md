@@ -1,4 +1,8 @@
 # Wootheex
+
+[![Docs](https://img.shields.io/badge/api-docs-green.svg?style=flat)](https://hexdocs.pm/wootheex/index.html)
+[![Hex.pm Version](http://img.shields.io/hexpm/v/wootheex.svg?style=flat)](https://hex.pm/packages/wootheex)
+
 The Elixir implementation of [Project Woothee](https://github.com/woothee/woothee),
 which is multi-language user-agent strings parsers.
 

@@ -29,8 +29,9 @@ defmodule Wootheex do
   @on_load :load_dynlib
   app = Mix.Project.config[:app]
 
+  @doc false
   def load_dynlib() do
-    :ok = 
+    :ok =
       [:code.priv_dir(unquote(app)), 'native', 'libwootheex_nif']
       |> :filename.join()
       |> :erlang.load_nif(0)
