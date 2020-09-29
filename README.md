@@ -8,6 +8,21 @@ which is multi-language user-agent strings parsers.
 
 There are simply NIF bindings to [Rust implementation](https://github.com/woothee/woothee-rust/) of the project.
 
+
+## Installation
+
+To install `Wootheex` you just add it to deps in `mix.exs`:
+
+```elixir
+def deps do
+  [
+    {:wootheex, "~> 0.1.0"}
+  ]
+end
+```
+
+And then download deps with `mix deps.get`.
+
 ## Rationale
 All existing UA parsers are not fast enough for soft real-time systems. Examples are:
 ### [UAInspector](https://github.com/elixir-inspector/ua_inspector)
@@ -47,20 +62,3 @@ iex(3)> Wootheex.UserAgent.parse(user_agent)
     vendor: "Google"
 }
 ```
-
-## Installation
-
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `wootheex` to your list of dependencies in `mix.exs`:
-
-```elixir
-def deps do
-  [
-    {:wootheex, "~> 0.1.0"}
-  ]
-end
-```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/wootheex](https://hexdocs.pm/wootheex).
