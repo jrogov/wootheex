@@ -9,7 +9,21 @@ which is multi-language user-agent strings parsers.
 There are simply NIF bindings to [Rust implementation](https://github.com/woothee/woothee-rust/) of the project.
 
 
+
 ## Installation
+
+### Rust setup
+To successfully compile `wootheex`, Rust toolchain must be installed on your system with either [`rustup`](https://doc.rust-lang.org/book/ch01-01-installation.html) or [any other installation method](https://forge.rust-lang.org/infra/other-installation-methods.html). 
+
+Once you have that installed (paths may differ):
+```
+~ $ which cargo rustc
+/home/user/.cargo/bin/cargo
+/home/user/.cargo/bin/rustc
+```
+You can jump to the next step. 
+
+### Library Installation
 
 To install `Wootheex` you just add it to deps in `mix.exs`:
 
@@ -22,6 +36,7 @@ end
 ```
 
 And then download deps with `mix deps.get`.
+
 
 ## Rationale
 All existing UA parsers are not fast enough for soft real-time systems. Examples are:
